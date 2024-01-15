@@ -12,6 +12,16 @@ db.on('connected', function(){
     console.log(`Connected to MongoDB ${db.name} at ${db.host}:${db.port}`);
 })
 
+module.exports = {
+    getData,
+}
+
+async function getData(){
+    const dataBase = client.db("product-compare");
+    const coll = dataBase.collection("products");
+    const currentProducts = [coll];
+}
+
 async function sendData(){
     const url1 = 'https://fakestoreapi.com/products';
     const url2 = 'https://dummyjson.com/products';

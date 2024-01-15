@@ -12,6 +12,7 @@ require('./config/database');
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
+const pagesRouter = require('./routes/sitePages');
 
 const app = express();
 
@@ -27,6 +28,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/sitePages', pagesRouter);
 
 app.listen(3000, function(){
   console.log('server running on port 3000')
